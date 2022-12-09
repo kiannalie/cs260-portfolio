@@ -1,38 +1,105 @@
 {
+  
   "name": "my-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "description": "Basic skeleton codebase for React/Redux/Router applications.",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "preinstall": "npm set audit false",
+    "postinstall": "cp env.example.js env.js",
+    "start": "webpack-dev-server --config webpack/dev.config.js --watch",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js --progress --display-error-details --color",
+    "heroku-postbuild": "npm run build",
+    "precommit": "eslint src",
+    "prod": "NODE_ENV=production node server.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bottega-code-school/js-builder.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [
+    "es6",
+    "es7",
+    "webpack2",
+    "webpack3",
+    "starter",
+    "template",
+    "postcss",
+    "sass",
+    "css module"
+  ],
+  "bugs": {
+    "url": "https://github.com/bottega-code-school/js-builder/issues"
+  },
+  "homepage": "https://github.com/bottega-code-school/js-builder",
+  "dependencies": {
+    "@brainhubeu/react-carousel": "^1.19.26",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.19",
+    "ajv": "^5.5.2",
+    "aos": "^2.3.4",
+    "autoprefixer": "^9.8.8",
+    "axios": "^0.18.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-async-to-promises": "^1.0.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "bootstrap": "^4.6.2",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.5.2",
+    "cross-env": "^5.2.1",
+    "css-loader": "^1.0.0",
+    "draft-js": "^0.10.5",
+    "draftjs-to-html": "^0.8.4",
+    "eslint": "^4.2.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-react": "^7.31.11",
+    "express": "^4.18.2",
+    "extract-loader": "^2.0.1",
+    "html-loader": "^0.5.5",
+    "html-to-draftjs": "^1.5.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.6.1",
+    "moment": "2.24.0",
+    "popper.js": "^1.14.4",
+    "postcss-loader": "^2.1.6",
+    "react": "^16.14.0",
+    "react-burger-menu": "^2.9.2",
+    "react-dom": "^16.14.0",
+    "react-draft-wysiwyg": "^1.15.0",
+    "react-dropzone-component": "^3.2.0",
+    "react-html-parser": "^2.0.2",
+    "react-modal": "^3.16.1",
+    "react-redux": "5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.3.1",
+    "react-truncate": "^2.4.0",
+    "redux": "^3.7.2",
+    "redux-router": "^2.1.2",
+    "sass-loader": "^7.3.1",
+    "striptags": "^3.2.0",
+    "style-loader": "^0.21.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-middleware": "^3.7.3",
+    "webpack-dev-server": "^3.11.3",
+    "webpack-hot-middleware": "^2.25.3",
+    "webpack-merge": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.56.2",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.46.0"
   }
 }

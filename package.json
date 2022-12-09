@@ -3,7 +3,6 @@
   "name": "my-app",
   "version": "1.0.0",
   "private": true,
-  "description": "Basic skeleton codebase for React/Redux/Router applications.",
   "scripts": {
     "preinstall": "npm set audit false",
     "postinstall": "cp env.example.js env.js",
